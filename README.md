@@ -18,14 +18,33 @@ Installation
 1. Get the source-code.
 2. Create a virtualenv with python3.4 (Use a searchengine for more information)
 3. Activate the virtualenv (Also use a searchengine for more information)
-
 4. Install the requirements with pip:
-
    ```pip install -r requirements.txt```
+5. Install node js (if you haven't already)
+6. Goto the main folder (the folder with package.json) and install all the necessary node modules:
+   ```npm install```
+7. Now you should be able to use webpack like:
+   ```node_modules/.bin/webpack```
+
+   This will start webpack with the configuration file ```webpack.config.js```.
+   After execution webpack should create a new ```backend/static/js/bundle.js```.
+   This file contains PixiJS and the gamecode.
 
 Start
 -----
 
+Make sure you packed a bundle with webpack (node_modules/.bin/webpack).
+
+You can start the flask backend with:
 ```python server.py```
 
-And then visit 127.0.0.1:5000 in your browser. (Should be a modern browser with webGL support)
+Now you can visit ```127.0.0.1:5000``` in your browser. (Use a modern browser with webGL support)
+
+Development
+-----------
+
+You can create the gamecode in the ECMA 6 specification.
+All files under ```frontend/``` will be transformed with the help of [Babel](https://babeljs.io/) and [webpack](https://webpack.github.io/).
+
+If you change the source code of the frontend, don't forget to create a new bundle with webpack:
+```node_modules/.bin/webpack```

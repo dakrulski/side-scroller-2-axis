@@ -1,0 +1,29 @@
+{
+  "name": "side-scroller-2-axis-boilerplate",
+  "version": "0.0.2",
+  "description": "Side-Scrolling 2 axis Boilerplate",
+  "main": "main.js",
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
+    "webpack": "^2.6.1"
+  },
+  "devDependencies": {
+    "pixi.js": "^4.5.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dakrulski/side-scroller-2-axis.git"
+  },
+  "keywords": [],
+  "author": "dakrulski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dakrulski/side-scroller-2-axis/issues"
+  },
+  "homepage": "https://github.com/dakrulski/side-scroller-2-axis#readme"
+}
