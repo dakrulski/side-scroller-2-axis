@@ -36,7 +36,7 @@ Start
 Make sure you packed a bundle with webpack (node_modules/.bin/webpack).
 
 You can start the flask backend with:
-```python server.py```
+```python backend/server.py```
 
 Now you can visit ```127.0.0.1:5000``` in your browser. (Use a modern browser with webGL support)
 
@@ -44,7 +44,7 @@ Development
 -----------
 
 You can create the gamecode in the ECMA 6 specification.
-All files under ```frontend/``` will be transformed with the help of [Babel](https://babeljs.io/) and [webpack](https://webpack.github.io/).
+All files under the ```frontend``` folder will be transformed with the help of [Babel](https://babeljs.io/) and [webpack](https://webpack.github.io/).
 
 If you change the source code of the frontend, don't forget to create a new bundle with webpack:
 ```node_modules/.bin/webpack```
