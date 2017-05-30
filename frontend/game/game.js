@@ -1,5 +1,6 @@
 import * as PIXI from 'pixi.js';
 import TestGraphic from './objects/test.js';
+import Viewport from './system/viewport.js';
 
 
 class Game extends PIXI.Application {
@@ -10,6 +11,9 @@ class Game extends PIXI.Application {
         this.ticker.add(function() {
             testor.rotation += 0.01;
         });
+
+        this.viewport = new Viewport();
+        this.stage.addChild(this.viewport);
     }
 }
 
