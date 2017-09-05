@@ -3,7 +3,7 @@ import * as SAT from 'sat';
 import Viewport from './system/viewport.js';
 import Textures from './system/textures.js';
 import Suit from './objects/suit.js';
-import { wanderer_random } from './ki/wanderer.js';
+import { wanderer_random } from './controller/wanderer.js';
 import { random_int_from_interval } from './system/functions.js';
 
 class Game extends PIXI.Application {
