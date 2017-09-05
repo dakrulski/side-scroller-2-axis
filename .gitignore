@@ -1,6 +1,9 @@
 .idea
 backend/static/js
 
+# my blender stuff
+blender/
+
 # Python
 __pycache__/
 *.py[cod]
