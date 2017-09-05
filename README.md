@@ -7,6 +7,7 @@ This project is for learning purposes and should not be deployed in production.
 
 I try to create a boilerplate for side-scroller 2 axis games in the browser with [PixiJS](http://www.pixijs.com/).
 The backend is a simple python [Flask](http://flask.pocoo.org/) app.
+The collision detection is done by a project named [SAT.js](https://github.com/jriecken/sat-js).
 
 I also want to write the boilerplate in the ECMA 6 specification with the help of [Babel](https://babeljs.io/) and [webpack](https://webpack.github.io/).
 
