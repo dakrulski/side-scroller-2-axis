@@ -7,14 +7,26 @@ class Viewport extends PIXI.Container {
         super();
         //this will be the background and the first layer of rendering
         //this.background = new PIXI.extras.TilingSprite();
+        //todo: implement the tiling background
 
         //this will get all objects for z-sorting
         //second layer of rendering
         this.objects = new ObjectContainer();
         this.addChild(this.objects);
+    }
 
-        console.log('VIEWPORT');
-        console.log(this);
+    objects_z_sort() {
+        this.objects.z_sort();
+    }
+
+    add_object(obj) {
+        this.objects.addChild(obj);
+        this.objects_z_sort();
+    }
+
+    update_objects() {
+        this.objects.update();
+        this.objects_z_sort();
     }
 }
 
