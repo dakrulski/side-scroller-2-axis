@@ -1,7 +1,7 @@
 import * as PIXI from 'pixi.js';
-import MoveableAnimation from './moveable_animation.js';
+import Person from './person.js';
 
-class Suit extends MoveableAnimation {
+class Suit extends Person {
     constructor(pos_x, pos_y, anim_dict) {
         super(anim_dict);
         // set pivot point

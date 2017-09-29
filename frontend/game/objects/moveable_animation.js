@@ -4,11 +4,7 @@ import AnimatedObject from './animated.js';
 
 class MoveableAnimation extends AnimatedObject {
     constructor(anim_dict) {
-        super(anim_dict)
-        this.velocity = {
-            'x': 1,
-            'y': 0.5
-        }
+        super(anim_dict);
 
         this.is_moving = false;
 
