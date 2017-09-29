@@ -4,23 +4,20 @@ export function wanderer_random() {
 
     if (this.controller_counter == 0) {
         // decide to idle or walk
-        let decision = random_element_from_list(['idle1', 'idle2', 'walk']);
-        if (decision == 'walk') {
+        let decision = random_element_from_list(['stand', 'move']);
+        if (decision == 'move') {
             // set new intent to move in a random direction
             this.want_to_move = random_element_from_list(this.controller_directions);
             this.is_moving = true;
-            this.change_animation('walk', this.want_to_move);
-            // set how long you want to move
-            this.controller_counter = random_int_from_interval(10,200);
         } else {
-            // idle or idle2
-            this.is_moving = false;
+            // stand
             // use this.want_to_move for direction from last time walking
-            if (!this.want_to_move) this.want_to_move = random_element_from_list(this.controller_directions);
-            this.change_animation(decision, this.want_to_move);
-            // set how long you want to idle
-            this.controller_counter = random_int_from_interval(10,200);
+            if (!this.is_moving) this.want_to_move = random_element_from_list(this.controller_directions);
+            this.is_moving = false;
         }
+        this.change_state_animation(decision, this.want_to_move);
+        // set how long
+        this.controller_counter = random_int_from_interval(10,200);
     } else {
         if (this.is_moving) {
             // todo: build in pivot offset
@@ -38,7 +35,7 @@ export function wanderer_random() {
                 // if you hit a wall while walking, back off
                 this.controller_counter = random_int_from_interval(10,200);
                 this.want_to_move = get_opposite_direction(this.want_to_move);
-                this.change_animation('walk', this.want_to_move);
+                this.change_state_animation('move', this.want_to_move);
                 // checks if npc is outside the box. move him back if true
                 if (this.pivot.scope.position.x < this.controller_data.min_x) {
                     this.move('e');
