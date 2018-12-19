@@ -12,7 +12,7 @@ class MoveableAnimation extends AnimatedObject {
         this.want_to_move = null;
     }
 
-    collision_check(nextpos) {
+    collision_move_check(nextpos) {
         // now move the hitbox from this obj in the nextpos for check
         var last_x = this.hitbox.ground.pos.x;
         var last_y = this.hitbox.ground.pos.y;
@@ -68,7 +68,7 @@ class MoveableAnimation extends AnimatedObject {
             nextpos.y -= this.velocity.y/2;
             nextpos.x -= this.velocity.x/2;
         }
-        var collision_result = this.collision_check(nextpos);
+        var collision_result = this.collision_move_check(nextpos);
         if (!(collision_result.collided)) {
             this.position = nextpos;
             this.hitbox.ground.pos.x = nextpos.x;

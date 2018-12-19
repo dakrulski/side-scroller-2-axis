@@ -22,12 +22,28 @@ class AnimatedObject extends GameObject {
         }
     }
 
-    change_animation(anim, dir) {
+    change_animation(anim, dir, single=false, callback=null) {
         if (this.animation_container.children.length > 0) {
             this.animation_container.removeChild(this.animation_container.children[0]);
         }
+        if (single==true) {
+            this.animations[anim][dir].loop = false;
+            if (callback != null) {
+                this.animations[anim][dir].onComplete = callback;
+            } else {
+                this.animations[anim][dir].onComplete = function (anim, dir) {
+                    this.animations[anim][dir].gotoAndStop(0);
+                    this.change_animation('idle1', dir)
+                }.bind(this, anim, dir);
+            }
+        }
+        //this.animations[anim][dir].gotoAndPlay(0);
         this.animations[anim][dir].play();
         this.animation_container.addChild(this.animations[anim][dir]);
+    }
+
+    tint(value) {
+        this.animation_container.children[0].tint = value;
     }
 }
 

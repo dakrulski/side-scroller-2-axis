@@ -69,8 +69,6 @@ class Textures {
         for (let rname in resources) {
             switch (resources[rname].extension) {
                 case "png":
-                    console.log('PNG');
-                    console.log(resources[rname]);
                     // descision based on metadata.type
                     if (resources[rname].metadata.type == 'multi_spritesheet') {
                         // check if group exist, if not create it
@@ -85,15 +83,10 @@ class Textures {
                     }
                     break;
                 case "json":
-                    console.log('JSON');
                     if (resources[rname].metadata.type == 'multi_anim') {
-                        console.log('Loading Multi Animation Object');
-                        console.log(resources[rname]);
                         this.create_multi_animation(resources[rname]);
                     };
                     if (resources[rname].metadata.type == 'anim') {
-                        console.log('Loading Animation');
-                        console.log(resources[rname]);
                         this.create_animation(resources[rname]);
                     };
                     break;

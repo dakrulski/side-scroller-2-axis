@@ -11,6 +11,7 @@ class Suit extends Person {
         // create a visible point on the pivot
         this.create_basepoint();
         this.create_ground_hitbox(5);
+        this.create_sprite_hitbox([40,25, 60,25, 60,70, 40,70, 40,25]);
         this.helper.visible = false;
 
         this.ki = false;

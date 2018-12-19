@@ -24,6 +24,12 @@ class Viewport extends PIXI.Container {
         this.objects_z_sort();
     }
 
+    add_player(player) {
+        this.player = player;
+        this.objects.addChild(player);
+        this.objects_z_sort();
+    }
+
     update_objects() {
         this.objects.update();
         this.objects_z_sort();
